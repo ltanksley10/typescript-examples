@@ -7,7 +7,7 @@
 //     //this marks a tuple
 //     role: [number, string];
 // } = {
-//     name: 'Lori',
+//     name: 'Maximillian',
 //     age: 30,
 //     hobbies: ['Sports', 'Cooking'],
 //     //tuples are fixed length arrays to make it even more strictly typed
@@ -28,7 +28,7 @@ var Role;
 })(Role || (Role = {}));
 ;
 var person = {
-    name: 'Lori',
+    name: 'Maximillian',
     age: 30,
     hobbies: ['Sports', 'Cooking'],
     role: Role.ADMIN
