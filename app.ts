@@ -26,7 +26,7 @@
 enum Role { ADMIN = 'ADMIN', READ_ONLY = 100, AUTHOR = 'AUTHOR' };
 
 const person = {
-    name: 'Lori',
+    name: 'Maximillian',
     age: 30,
     hobbies: ['Sports', 'Cooking'],
     role: Role.ADMIN
