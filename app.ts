@@ -1,58 +1,29 @@
-//interface can be used instead of custom typed function
-interface AddFn {
-    (a: number, b: number): number;
-}
+//intersection types
 
-let add: AddFn;
-
-add = (n1: number, n2: number) => {
-    return n1 + n2; 
+type Admin = {
+    name: string;
+    privileges: string[];
 };
 
-//inheritance can be implemented with interfaces
-interface Named {
-    //inside an interface you can use readonly to make it clear
-    // it can only be used once and not reset
-    readonly name?: string;
-    //you can also define optional properties in interfaces by 
-    //adding a questionmark after property name
-    outputName?: string;
-}
+type Employee = {
+    name: string;
+    startDate: Date;
+};
 
-//an interface describes the structure of an object
-interface Greetable extends Named {
-    //extending Named forces Greetable to inherit Named
-    // age: number;
-    greet(phrase: string): void;
-}
+type ElevatedEmployee = Admin & Employee;
 
-// interfaces can be implemented into a class
-// can implement multiple interfaces by separating with a comma
-class Person implements Greetable {
-    name?: string;
-    
-    constructor(n?: string) {
-        this.name = n;
-    }
-    
-    greet(phrase: string) {
-        console.log(phrase + ' ' + this.name);
-    }
-}
+const el: ElevatedEmployee = { 
+    name: 'Max', 
+    privileges: ['create-server'],
+    startDate: new Date()
+};
 
-let user1: Greetable;
+type Combinable = string | number;
+type Numeric = number | boolean; 
 
-user1 = new Person('Max');
+//typescript will see this is a number since that's the only
+//intersection we have here
+type Universal = Combinable & Numeric; 
 
-// user1 = { 
-//     name: 'Max',
-//     age: 30,
-//     greet(phrase: string) {
-//         console.log(phrase + ' ' + this.name);
-//     }
-// };
-
-user1.greet('Hi there - I am ');
-console.log(user1);
-
-//interfaces are useful when wanting to force existence of a method
+// intersection types can help express something in a simpler
+//or easier way
