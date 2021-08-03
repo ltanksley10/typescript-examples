@@ -18,3 +18,4 @@ function printEmployeeInformation(emp) {
         console.log('Privileges: ' + emp.startDate);
     }
 }
+printEmployeeInformation({ name: 'Manu', startDate: new Date() });

@@ -41,3 +41,7 @@ function printEmployeeInformation(emp: UnknownEmployee) {
     }
 }
 
+printEmployeeInformation({name: 'Manu', startDate: new Date()});
+
+
+
