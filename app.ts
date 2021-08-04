@@ -95,3 +95,16 @@ interface ErrorContainer {
 const errorBag: ErrorContainer = {
     email: 'Not a valid email!'
 }
+
+//optional chaining in typescript
+//helps us safely access nested properties in object data
+//if thing in front of question mark is undefined it will not
+//access the thing after the question mark
+//basically compiled to an if check
+const fetchedUserData = {
+    id: 'u1',
+    name: 'Max', 
+    job: {title: 'Blah blah', description: 'My own company' }
+};
+
+console.log(fetchedUserData?.job?.title);
