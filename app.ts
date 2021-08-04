@@ -43,5 +43,32 @@ function printEmployeeInformation(emp: UnknownEmployee) {
 
 printEmployeeInformation({name: 'Manu', startDate: new Date()});
 
+// discriminated union types
 
+interface Bird {
+    //literal type
+    //gives 100% type safety
+    type: 'bird';
+    flyingSpeed: number;
+}
 
+interface Horse {
+    type: 'horse';
+    runningSpeed: number;
+}
+
+type Animal = Bird | Horse;
+
+function moveAnimal(animal: Animal) {
+    let speed;
+    switch (animal.type) {
+        case 'bird': 
+            speed = animal.flyingSpeed;
+            break;
+        case 'horse':
+            speed = animal.runningSpeed;
+    }
+    console.log('Moving at Speed ' + speed);
+}
+
+moveAnimal({type: 'bird', flyingSpeed: 10});
