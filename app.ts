@@ -81,3 +81,15 @@ const userInputElement = <HTMLInputElement>document.getElementById('user-input')
 // const userInputElement = document.getElementById('user-input')! as HTMLInputElement;
 
 userInputElement.value = 'Hi there!';
+
+//index types 
+//allows us to create objects which are more flexible regarding
+//the properties they might hold
+interface ErrorContainer {
+    //defined by using square brackets & name of choice
+    [prop: string]: string;
+}
+
+const errorBag: ErrorContainer = {
+    email: 'Not a valid email!'
+}
